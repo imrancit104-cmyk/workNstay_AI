@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Us - WorkNStay AI - Get in touch with our team">
+    <title>Contact Us - WorkNStay AI</title>
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .contact-hero {
+            background: linear-gradient(135deg, #f8fafb 0%, #e8f5f0 50%, #f0f9ff 100%);
+            padding: 64px 0;
+            text-align: center;
+        }
+
+        .contact-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .contact-hero p {
+            color: var(--gray-600);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .contact-section {
+            padding: 64px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--gray-100);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(26, 127, 90, 0.1);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .contact-card h4 {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .contact-card p {
+            color: var(--gray-600);
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .contact-card a {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .contact-form-card {
+            background: white;
+            border-radius: 20px;
+            padding: 32px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .contact-form-card h3 {
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .social-link {
+            width: 44px;
+            height: 44px;
+            background: var(--gray-100);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            font-size: 1.25rem;
+            transition: all 0.2s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .faq-section {
+            background: var(--gray-50);
+            padding: 64px 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .faq-card {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid var(--gray-100);
+        }
+
+        .faq-card h5 {
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-card h5 i {
+            color: var(--primary);
+        }
+
+        .faq-card p {
+            color: var(--gray-600);
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 992px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar-custom">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="navbar-brand-custom">
+                    <div class="logo-icon">
+                        <i class="bi bi-house-heart-fill"></i>
+                    </div>
+                    WorkNStay AI
+                </a>
+
+                <div class="d-none d-lg-flex align-items-center gap-2">
+                    <a href="index.html" class="nav-link-custom">Home</a>
+                    <a href="jobs.html" class="nav-link-custom">Find Jobs</a>
+                    <a href="hostels.html" class="nav-link-custom">Find Hostels</a>
+                    <a href="contact.html" class="nav-link-custom active">Contact</a>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <a href="login.html" class="btn-custom btn-ghost d-none d-md-flex">Sign In</a>
+                    <a href="signup.html" class="btn-custom btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="fade-in">Get In Touch</h1>
+            <p class="fade-in" style="animation-delay: 0.1s">Have questions or feedback? We'd love to hear from you. Our
+                team is here to help.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-card fade-in">
+                        <div class="contact-icon">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>For general inquiries and support</p>
+                            <a href="mailto:support@worknstay.pk">support@worknstay.pk</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in" style="animation-delay: 0.1s">
+                        <div class="contact-icon">
+                            <i class="bi bi-telephone"></i>
+                        </div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>Mon - Fri, 9:00 AM - 6:00 PM</p>
+                            <a href="tel:+924235678900">+92 42 3567 8900</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in" style="animation-delay: 0.2s">
+                        <div class="contact-icon">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>TEVTA Secretariat<br>96-H, Gulberg II, Lahore</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card fade-in" style="animation-delay: 0.3s">
+                        <div class="contact-icon">
+                            <i class="bi bi-whatsapp"></i>
+                        </div>
+                        <div>
+                            <h4>WhatsApp Support</h4>
+                            <p>Quick responses for students</p>
+                            <a href="https://wa.me/923001234567">+92 300 123 4567</a>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="contact-form-card fade-in" style="animation-delay: 0.2s">
+                    <h3>Send us a Message</h3>
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group-custom">
+                                    <label for="name" class="form-label-custom">Full Name</label>
+                                    <input type="text" id="name" class="form-control-custom" placeholder="Your name"
+                                        required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group-custom">
+                                    <label for="email" class="form-label-custom">Email</label>
+                                    <input type="email" id="email" class="form-control-custom" placeholder="Your email"
+                                        required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group-custom">
+                            <label for="subject" class="form-label-custom">Subject</label>
+                            <select id="subject" class="form-control-custom form-select-custom">
+                                <option value="">Select a topic</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="verification">TEVTA Verification</option>
+                                <option value="employer">Employer Partnership</option>
+                                <option value="hostel">Hostel Listing</option>
+                                <option value="feedback">Feedback</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group-custom">
+                            <label for="message" class="form-label-custom">Message</label>
+                            <textarea id="message" class="form-control-custom" rows="5"
+                                placeholder="Tell us how we can help..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-custom btn-primary btn-lg w-100">
+                            <i class="bi bi-send"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Frequently Asked Questions</h2>
+                <p class="text-muted">Quick answers to common questions</p>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-card fade-in">
+                    <h5><i class="bi bi-patch-question"></i> How do I verify my TEVTA student status?</h5>
+                    <p>During signup, enter your TEVTA roll number and institute. Our system will verify your enrollment
+                        with TEVTA records within 24-48 hours.</p>
+                </div>
+
+                <div class="faq-card fade-in" style="animation-delay: 0.1s">
+                    <h5><i class="bi bi-patch-question"></i> Is the platform free for students?</h5>
+                    <p>Yes! WorkNStay AI is completely free for TEVTA students. We charge a small commission from
+                        employers and hostel owners only.</p>
+                </div>
+
+                <div class="faq-card fade-in" style="animation-delay: 0.2s">
+                    <h5><i class="bi bi-patch-question"></i> How does the AI matching work?</h5>
+                    <p>Our AI analyzes your skills, education, and preferences to match you with jobs and hostels that
+                        best fit your profile. The higher the match score, the better the fit.</p>
+                </div>
+
+                <div class="faq-card fade-in" style="animation-delay: 0.3s">
+                    <h5><i class="bi bi-patch-question"></i> Are the listed hostels verified?</h5>
+                    <p>All hostels go through our verification process including physical inspection, owner
+                        verification, and ongoing review monitoring to ensure student safety.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="d-flex align-items-center gap-2 text-white text-decoration-none mb-3">
+                        <div class="logo-icon"
+                            style="width: 40px; height: 40px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                            <i class="bi bi-house-heart-fill"></i>
+                        </div>
+                        <span class="fs-5 fw-bold">WorkNStay AI</span>
+                    </a>
+                    <p class="text-white-50 small">Empowering TEVTA students with AI-powered job matching and verified
+                        accommodations.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="mb-0 text-white-50">© 2024 WorkNStay AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('button[type="submit"]');
+            btn.innerHTML = '<span class="spinner" style="width: 16px; height: 16px;"></span> Sending...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                showToast('Message Sent!', 'Thank you for contacting us. We\'ll respond within 24 hours.', 'success');
+                this.reset();
+                btn.innerHTML = '<i class="bi bi-send"></i> Send Message';
+                btn.disabled = false;
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>

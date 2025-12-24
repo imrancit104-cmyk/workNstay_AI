@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About WorkNStay AI - Our mission to empower TEVTA students">
+    <title>About Us - WorkNStay AI</title>
+
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏠</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/animations.css">
+
+    <style>
+        body {
+            padding-top: 80px;
+        }
+
+        .about-hero {
+            background: linear-gradient(135deg, #1a7f5a 0%, #0f5a3e 100%);
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .about-hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .mission-section {
+            padding: 80px 0;
+        }
+
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .mission-card {
+            text-align: center;
+            padding: 40px 24px;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s;
+        }
+
+        .mission-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-8px);
+        }
+
+        .mission-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: var(--primary-gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .mission-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .mission-card p {
+            color: var(--gray-600);
+            margin: 0;
+        }
+
+        .story-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .story-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .story-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        .story-content p {
+            color: var(--gray-700);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+
+        .stats-section {
+            padding: 64px 0;
+            background: linear-gradient(135deg, #1a7f5a 0%, #2563eb 100%);
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            opacity: 0.9;
+            margin: 0;
+        }
+
+        .team-section {
+            padding: 80px 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 32px 20px;
+            background: white;
+            border-radius: 20px;
+            border: 1px solid var(--gray-100);
+            transition: all 0.3s;
+        }
+
+        .team-card:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .team-avatar {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+        }
+
+        .team-card h4 {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .team-card p {
+            color: var(--gray-500);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .team-social {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+        }
+
+        .team-social a {
+            width: 36px;
+            height: 36px;
+            background: var(--gray-100);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gray-600);
+            transition: all 0.2s;
+        }
+
+        .team-social a:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .partners-section {
+            padding: 64px 0;
+            background: var(--gray-50);
+        }
+
+        .partners-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .partner-logo {
+            padding: 24px 32px;
+            background: white;
+            border-radius: 12px;
+            font-weight: 700;
+            color: var(--gray-400);
+            font-size: 1.25rem;
+        }
+
+        @media (max-width: 992px) {
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 576px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar-custom">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="index.html" class="navbar-brand-custom">
+                    <div class="logo-icon">
+                        <i class="bi bi-house-heart-fill"></i>
+                    </div>
+                    WorkNStay AI
+                </a>
+
+                <div class="d-none d-lg-flex align-items-center gap-2">
+                    <a href="index.html" class="nav-link-custom">Home</a>
+                    <a href="jobs.html" class="nav-link-custom">Find Jobs</a>
+                    <a href="hostels.html" class="nav-link-custom">Find Hostels</a>
+                    <a href="about.html" class="nav-link-custom active">About</a>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <a href="login.html" class="btn-custom btn-ghost d-none d-md-flex">Sign In</a>
+                    <a href="signup.html" class="btn-custom btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <h1 class="fade-in">Empowering TEVTA Students</h1>
+            <p class="fade-in" style="animation-delay: 0.1s">We're on a mission to connect technical students with
+                opportunities that match their skills and aspirations.</p>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">What We Stand For</h2>
+                <p class="text-muted">Our core values drive everything we do</p>
+            </div>
+
+            <div class="mission-grid">
+                <div class="mission-card fade-in">
+                    <div class="mission-icon">
+                        <i class="bi bi-lightbulb"></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To bridge the gap between TEVTA graduates and employment opportunities through intelligent
+                        AI-driven matching and verified accommodations.</p>
+                </div>
+
+                <div class="mission-card fade-in" style="animation-delay: 0.1s">
+                    <div class="mission-icon">
+                        <i class="bi bi-eye"></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To become Pakistan's leading platform for technical education graduates, ensuring no skilled
+                        student is left without opportunity.</p>
+                </div>
+
+                <div class="mission-card fade-in" style="animation-delay: 0.2s">
+                    <div class="mission-icon">
+                        <i class="bi bi-heart"></i>
+                    </div>
+                    <h3>Our Values</h3>
+                    <p>Trust, accessibility, and student-first approach. We prioritize verified connections and safe
+                        environments for all users.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-content">
+                <h2>Our Story</h2>
+                <p>WorkNStay AI was born from a simple observation: TEVTA graduates, despite their valuable technical
+                    skills, often struggle to find suitable employment and safe accommodations near their institutes.
+                </p>
+                <p>Founded by a team of passionate technologists and education advocates, we set out to create a
+                    platform that leverages artificial intelligence to match students with opportunities that truly fit
+                    their profiles.</p>
+                <p>Today, we're proud to serve thousands of students across Punjab, connecting them with verified
+                    employers and safe, affordable hostels - all through a platform designed specifically for their
+                    needs.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <h3>5,000+</h3>
+                    <p>Students Registered</p>
+                </div>
+                <div class="stat-item fade-in" style="animation-delay: 0.1s">
+                    <h3>500+</h3>
+                    <p>Active Jobs</p>
+                </div>
+                <div class="stat-item fade-in" style="animation-delay: 0.2s">
+                    <h3>150+</h3>
+                    <p>Verified Hostels</p>
+                </div>
+                <div class="stat-item fade-in" style="animation-delay: 0.3s">
+                    <h3>95%</h3>
+                    <p>Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Meet Our Team</h2>
+                <p class="text-muted">The passionate people behind WorkNStay AI</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card fade-in">
+                    <div class="team-avatar">AR</div>
+                    <h4>Abdul Rasheed</h4>
+                    <p>Lead Developer</p>
+                    <div class="team-social">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in" style="animation-delay: 0.1s">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #8b5cf6, #a855f7);">TM</div>
+                    <h4>Taimoor</h4>
+                    <p>Frontend Developer</p>
+                    <div class="team-social">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in" style="animation-delay: 0.2s">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #2563eb, #3b82f6);">AL</div>
+                    <h4>Ali Raza</h4>
+                    <p>Frontend Developer</p>
+                    <div class="team-social">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card fade-in" style="animation-delay: 0.3s">
+                    <div class="team-avatar" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);">IM</div>
+                    <h4>Imran</h4>
+                    <p>Frontend Developer</p>
+                    <div class="team-social">
+                        <a href="#"><i class="bi bi-github"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h5 class="text-muted">Trusted Partners</h5>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-logo">TEVTA Punjab</div>
+                <div class="partner-logo">Youth Affairs</div>
+                <div class="partner-logo">PSDF</div>
+                <div class="partner-logo">PITB</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="padding: 80px 0; background: var(--gray-50);">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3">Ready to Get Started?</h2>
+            <p class="text-muted mb-4">Join thousands of TEVTA students finding opportunities</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="signup.html" class="btn-custom btn-primary btn-lg">
+                    Create Free Account
+                </a>
+                <a href="contact.html" class="btn-custom btn-outline-primary btn-lg">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-custom">
+        <div class="container">
+            <div class="footer-bottom">
+                <p class="mb-0 text-white-50">© 2024 WorkNStay AI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
